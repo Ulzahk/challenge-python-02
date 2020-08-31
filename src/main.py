@@ -13,14 +13,22 @@ def generate_password():
     # Start coding here
     characters = SYMBOLS + LETTERS + CAPITAL_LETTERS + NUMBERS
     password = []
-    random_password_length = random.randint(12, 16)
+
+    one_SYMBOL = random.choice(SYMBOLS)
+    one_LETTER = random.choice(LETTERS)
+    one_CAPITAL_LETTER = random.choice(CAPITAL_LETTERS)
+    one_NUMBER = random.choice(NUMBERS)
+
+    password.extend([one_SYMBOL, one_LETTER , one_CAPITAL_LETTER, one_NUMBER])
+    random_password_length = random.randint(4, 12)
 
     for i in range(random_password_length):
         random_character = random.choice(characters)
         password.append(random_character)
 
+    random.shuffle(password)
     password = ''.join(password)
-    
+
     return password
 
 
