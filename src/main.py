@@ -1,11 +1,27 @@
 # Resolve the problem!!
 import string
+import random
+
 
 SYMBOLS = list('!"#$%&\'()*+,-./:;?@[]^_`{|}~')
+LETTERS = list('abcdefghijklmnopqrstuvwxyz')
+CAPITAL_LETTERS = list('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+NUMBERS = list('0123456789')
 
 
 def generate_password():
     # Start coding here
+    characters = SYMBOLS + LETTERS + CAPITAL_LETTERS + NUMBERS
+    password = []
+    random_password_length = random.randint(12, 16)
+
+    for i in range(random_password_length):
+        random_character = random.choice(characters)
+        password.append(random_character)
+
+    password = ''.join(password)
+    
+    return password
 
 
 def validate(password):
